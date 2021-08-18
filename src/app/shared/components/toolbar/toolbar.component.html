@@ -1,0 +1,36 @@
+<mat-toolbar>
+    <span>Chunches</span>
+    <button [routerLink]="['/products', 'all']" mat-button>Inicio
+        <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+    <span class="toolbar-space"></span>
+
+    <!-- <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button> -->
+  
+    <button disabled mat-button>
+        admin
+        <mat-icon>account_box</mat-icon>
+    </button>
+    
+    <button mat-button [routerLink]="['/products', 'list']">
+        Mis Artículos
+        <mat-icon>assignment</mat-icon>
+    </button>
+
+    <button mat-button [routerLink]="['/products', 'add']">
+        Agregar Artículo
+        <mat-icon>add_to_queue</mat-icon>
+    </button>
+
+    <button mat-button [routerLink]="['/login']">
+            Cerrar Sesión
+            <mat-icon>input</mat-icon>
+    </button>
+
+
+    <mat-menu #menu>
+        <button mat-menu-item [routerLink]="['/products', 'add']">Agregar Artículo</button>
+    </mat-menu>
+</mat-toolbar>

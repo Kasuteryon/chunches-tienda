@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>
+    {{model.title}}
+</h1>
+
+<div mat-dialog-content>
+    <p>{{model.message}}</p>
+</div>
+
+<div mat-dialog-actions>
+    <button (click)="yes()" class="btn-hover color-6">Si</button>
+    <button (click)="no()" class="btn-hover color-10">No</button>
+</div>

@@ -1,0 +1,22 @@
+.card-container{
+    display: flex;
+
+    /*genera una fila cuando no hay espacio*/
+    flex-flow: row wrap;
+}
+
+.card-content{
+    width: 300px;
+    box-sizing: border-box;
+    margin: 16px;
+    cursor: pointer;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+.mat-success {
+    background-color: green;
+    color: #fff;
+}

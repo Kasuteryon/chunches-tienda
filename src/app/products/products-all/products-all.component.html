@@ -1,0 +1,37 @@
+
+<div *ngIf="time()" class="loader"><img src="../../../assets/loader.gif" alt="#" /></div>
+
+<img src="assets\ciudad.jpg"  style="height: 1000px; width: 100%; position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
+
+<div class="card-container">
+    <mat-card class="card-content-search">
+        <mat-card style="width: 50%;">
+            <mat-form-field style="width: 45vw;" appearance="outline">
+                <mat-label>Buscar</mat-label>
+                <input class="search" matInput [(ngModel)]="searchText">
+            </mat-form-field>
+        </mat-card>
+    </mat-card>
+</div>
+<div class="card-container">
+    <div *ngFor="let product of products.reverse() | appFilter:searchText">
+        <mat-card class="card-content animate__animated  animate__backInLeft">
+            <mat-card-header>
+                <mat-card-title>{{product.title}}</mat-card-title>
+                <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
+                <img mat-card-img *ngIf="product.thumbImage" [src]="product.thumbImage">
+            </mat-card-header>
+    
+            <mat-card-content>
+                <p><b>Descripción:</b></p>
+                <p>{{product.description}}</p>
+                <p><b>Estado:</b></p>
+                <p>{{product.status}}/10</p>
+            </mat-card-content>
+    
+            <mat-card-actions>
+                <button mat-raised-button class="btn-hover color-9">Me interesa</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

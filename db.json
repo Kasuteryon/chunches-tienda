@@ -1,0 +1,134 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "12345",
+      "name": "Eduardo",
+      "lastName": "Castellón",
+      "birthDate": "2002-01-10T06:00:00.000Z",
+      "email": "eduardo@gmail.com",
+      "id": "1"
+    },
+    {
+      "username": "flaco",
+      "password": "12345",
+      "name": "Flaco",
+      "lastName": "Lopez",
+      "birthDate": "2000-05-10T06:00:00.000Z",
+      "email": "flaco@gmail.com",
+      "id": "gTwNTBl"
+    },
+    {
+      "username": "hbic",
+      "password": "12345",
+      "name": "Ashly Yarainsty",
+      "lastName": "Ramos Rivas",
+      "birthDate": "2000-12-26T06:00:00.000Z",
+      "email": "ashly@gmail.com",
+      "id": "cXZKfWJ"
+    }
+  ],
+  "products": [
+    {
+      "title": "Laptop Roja",
+      "brand": "Toshiba",
+      "price": "",
+      "description": "Laptop Toshiba Aspire 16 poco uso",
+      "status": "10",
+      "thumbImage": "https://intercompras.com/images/product/TOSHIBA_BUNDLE_21000M4_OF.jpg",
+      "id": "2000313354"
+    },
+    {
+      "title": "Impresora",
+      "brand": "HP",
+      "price": "",
+      "description": "Impresora HP D530 con cabezales dañados. Para quien quierar repararla",
+      "status": "8",
+      "thumbImage": "https://comtech.com.ni/wp-content/uploads/2020/10/Impresora-HP-Todo-En-Uno-Deskjet-Ink-Advantage-2775.jpg",
+      "userId": "1",
+      "id": "2000311399"
+    },
+    {
+      "title": "Walkie Talkie",
+      "url": "https://pim-img-psmt1.aeropost.com/n/8/9/8/3/8983c050e47bdeeee59632e61623cf7d01f057bb_386289_01.jpg",
+      "brand": "ACC",
+      "id": "2000309450",
+      "thumbImage": "https://pim-img-psmt1.aeropost.com/n/8/9/8/3/8983c050e47bdeeee59632e61623cf7d01f057bb_386289_01.jpg",
+      "userId": "1",
+      "status": 2,
+      "description": "Walkie Talkie de 5m de rango, batería recargable en mal estado"
+    },
+    {
+      "title": "Parlantes",
+      "brand": "DELLó",
+      "price": "",
+      "description": "Paralantes Dell solo 1 funciona",
+      "status": 5,
+      "thumbImage": "https://m.media-amazon.com/images/I/51uZvnHmAtL._AC_SS450_.jpg",
+      "id": "2000301398"
+    },
+    {
+      "title": "Pizarra",
+      "brand": "Mapa",
+      "thumbImage": "data:image/png;base64,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",
+      "id": "ao7nucq",
+      "userId": "1",
+      "status": 9,
+      "description": "Pizarra de 2 metros, solo borra con liquido especial"
+    },
+    {
+      "title": "Maracas",
+      "brand": "Ebanistas-Nica",
+      "thumbImage": "data:image/jpeg;base64,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",
+      "id": "Xt-ii-a",
+      "userId": "1",
+      "status": 10,
+      "description": "Maracas sin detalles. Poco uso"
+    },
+    {
+      "title": "Teclado",
+      "brand": "Klip Extreme",
+      "price": "",
+      "description": "Teclas R, T, U sin funcionar y cable quebrado",
+      "status": 10,
+      "thumbImage": "https://comtech.com.ni/wp-content/uploads/2020/10/TECLADO-LOGITECH-K120-INGLES-920-002478-comtech.jpg",
+      "id": "rPGlB_9"
+    },
+    {
+      "title": "POS",
+      "brand": "BAC",
+      "description": "POS sin chip para repuestos electrónicos",
+      "status": 3,
+      "thumbImage": "https://www2.baccredomatic.com/sites/default/files/ingenico_ict220.jpg",
+      "id": "XwQaMi4"
+    },
+    {
+      "title": "Zapatatillas Negras",
+      "brand": "Dolge&Gabana",
+      "price": "",
+      "description": "Poco uso, desgaste frontal",
+      "status": "10",
+      "thumbImage": "https://lh4.googleusercontent.com/Dk-GeooN3D57rrXysfhBYdma400q-RbWjneem8ukC-oFShXbZCSxU1zyBqiTDVlIm02CgGNAkMSNZEmRiTd98VAFpcjN9gmI4oGoHnalj2efXY4ZwNxdzhXn1uO4J2RU1v7L1Gl0",
+      "id": "611ZMU-"
+    },
+    {
+      "title": "Paralante Bluetooth",
+      "brand": "Sony",
+      "description": "Sonido bajo, para quien quiera repararlo",
+      "status": 5,
+      "thumbImage": "https://www.sony.com.ni/image/2b952e6d337cfb1f90764b11a8576db2?fmt=pjpeg&wid=660&bgcolor=F1F5F9&bgc=F1F5F9",
+      "userId": "1",
+      "id": "WO_McLL"
+    },
+    {
+      "title": "Cuaderno",
+      "brand": "El Líder",
+      "price": "",
+      "description": "Poco uso",
+      "status": "7",
+      "thumbImage": "https://plazavea.vteximg.com.br/arquivos/ids/209219-450-450/20091204.jpg?v=636845452051870000",
+      "userId": "1",
+      "id": "P4Y2tOq"
+    }
+  ]
+}

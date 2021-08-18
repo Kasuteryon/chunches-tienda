@@ -1,0 +1,19 @@
+<img src="assets\ciudad.jpg"  style="height: 1000px; width: 100%; position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
+
+<div class="card-container">
+    <div *ngFor="let product of products.reverse()">
+        <mat-card *ngIf="product.userId == 1" class="card-content animate__animated animate__backInLeft" >
+            <mat-card-header>
+                <mat-card-title>{{product.title}}</mat-card-title>
+                <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
+                <img mat-card-img *ngIf="product.thumbImage" [src]="product.thumbImage">
+            </mat-card-header>
+    
+            <mat-card-actions>
+                <button class="btn-hover color-5" mat-raised-button [routerLink]="['/products','edit',product.id]">Editar</button>
+                <button class="btn-hover color-11" mat-raised-button (click)="delete(product)">Eliminar</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    
+</div>
