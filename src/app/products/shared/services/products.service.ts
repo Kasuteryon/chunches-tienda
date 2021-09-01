@@ -4,8 +4,11 @@ import { Observable } from 'rxjs';
 import { User } from 'src/app/shared/models/user';
 import { Product } from '../models/product';
 
-const PRODUCTS_URL = 'http://192.168.1.8:3000/products';
-const USERS_URL = 'http://192.168.1.8:3000/users';
+//const PRODUCTS_URL = 'http://192.168.1.8:3000/products';
+//const USERS_URL = 'http://192.168.1.8:3000/users';
+
+const PRODUCTS_URL = 'http://localhost:3000/products';
+const USERS_URL = 'http://localhost:3000/users';
 
 @Injectable({
   providedIn: 'root'

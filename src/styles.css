@@ -97,18 +97,42 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* LOADER*/
 
-
-.loader {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+body{
+    background-color: #f0f5ff;
+    background-image: url(./assets/ciudad.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.loader img {
-	width: 150px;
+.mat-card{
+    background-color: #f0f5ff;
+    border-radius: 20px !important;
+    box-shadow: rgba(136, 172, 243, 0.25) 0px 10px 30px, rgba(0, 0, 0, 0.03) 0px 1px 1px,
+    rgba(47, 62, 96, 0.01) 0px 10px 20px, rgba(76, 102, 148, 0.13) 0px 1px 3px;;
+}
+button{
+    border-radius: 20px !important;
+}
+
+.img-chunche{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.log-card{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.mat-card-warning{
+    background-color: orangered !important;
+}
+@media only screen and (max-width: 800px) {
+    
+    .resp{
+        display: none;
+    }
+    
+    .log-card{
+        border-radius: 20px !important;
+    }
 }

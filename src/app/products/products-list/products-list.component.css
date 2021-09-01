@@ -2,7 +2,8 @@
     display: flex;
 
     /*genera una fila cuando no hay espacio*/
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .card-content{

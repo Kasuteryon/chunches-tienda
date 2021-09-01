@@ -26,6 +26,7 @@ mat-card-content{
 }
 .row {
     display: flex;
+    flex-wrap: wrap;
   }
   
   .col {
