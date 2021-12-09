@@ -57,7 +57,7 @@ export class ProductAddComponent implements OnInit {
 
   onChange(event) {
     if (event.target.files.length > 0) {
-      const file = event.target.files[0].name;
+      const file = event.target.files[0];
       
       this.img = file;
 

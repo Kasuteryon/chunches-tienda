@@ -29,6 +29,9 @@ public id;
               private authService:AuthService){
 
   }
+  ngOnInit(): void {
+    localStorage.removeItem('currentUser')
+  }
 
   submit(){
     // Revisamos si es consistente o no
@@ -41,7 +44,7 @@ public id;
 
     this.authService.login(user.username, user.password).pipe(first()).subscribe(
       data => {
-        console.log(data)
+        this.router.navigate(['']);
       }
     )
   }

@@ -1,12 +1,7 @@
 
 <div class="card-container">
     <mat-card class="card-content-search">
-        <mat-card style="width: 50%;">
-            <mat-form-field style="width: 45vw;" appearance="outline">
-                <mat-label>Buscar</mat-label>
-                <input class="search" matInput [(ngModel)]="searchText">
-            </mat-form-field>
-        </mat-card>
+        <input placeholder="Buscar..." class="search" matInput [(ngModel)]="searchText"><mat-icon>search</mat-icon>
     </mat-card>
 </div>
 <div class="card-container">
@@ -14,24 +9,26 @@
         <mat-card class="card-content animate__animated  animate__backInLeft">
             <mat-card-header>
                 <mat-card-title>{{product.titulo}}</mat-card-title>
-                <mat-card-subtitle>{{product.marca}}</mat-card-subtitle>
+                <mat-card-subtitle style="color: white;">{{product.marca}}</mat-card-subtitle>
                 
             </mat-card-header>
             <img mat-card-img *ngIf="product.imagen" src="http://127.0.0.1:8000{{product.imagen}}">
-            <mat-card-content>
-                <p><b>Descripción:</b></p>
-                <p>{{product.descripcion}}</p>
-
-                <p><b>Estado:</b></p>
-                <p>{{product.estado}}/10</p>
-
-                <p><b>Categoría:</b></p>
-                <p>{{product.idcategoria}}</p>
-            </mat-card-content>
+            <div class="body">
+                <mat-card-content>
+                    <p><b>Descripción:</b></p>
+                    <p>{{product.descripcion}}</p>
     
-            <mat-card-actions>
-                <button mat-raised-button class="btn-hover color-9">Me interesa</button>
-            </mat-card-actions>
+                    <p><b>Estado:</b></p>
+                    <p>{{product.estado}}/10</p>
+    
+                    <p><b>Categoría:</b></p>
+                    <p>{{product.idcategoria}}</p>
+                </mat-card-content>
+        
+                <mat-card-actions>
+                    <button mat-raised-button class="btn-hover color-9">Me interesa</button>
+                </mat-card-actions>
+            </div>
         </mat-card>
 
     </div>

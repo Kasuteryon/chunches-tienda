@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'ed-products',
   templateUrl: './products.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.validateSession();
   }
 
+  validateSession(){
+    if (localStorage.getItem('currentUser') === null){
+      this.router.navigate(['login']);
+    }
+  }
 }

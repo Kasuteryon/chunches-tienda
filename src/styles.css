@@ -99,19 +99,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body{
     background-color: #f0f5ff;
-    background-image: url(./assets/back.svg);
+    background-image: url(./assets/back3.svg);
     background-attachment: fixed;
     background-size: cover;
 }
 
 .mat-card{
     background-color: #f0f5ff;
-    border-radius: 20px !important;
+    border-radius: 15px !important;
     box-shadow: rgba(136, 172, 243, 0.25) 0px 10px 30px, rgba(0, 0, 0, 0.03) 0px 1px 1px,
-    rgba(47, 62, 96, 0.01) 0px 10px 20px, rgba(76, 102, 148, 0.13) 0px 1px 3px;;
+    rgba(47, 62, 96, 0.01) 0px 10px 20px, rgba(76, 102, 148, 0.13) 0px 1px 3px;
 }
+
+
 button{
-    border-radius: 20px !important;
+    border-radius: 10px !important;
 }
 
 .img-chunche{

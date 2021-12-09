@@ -1,7 +1,7 @@
-<mat-toolbar>
+<mat-toolbar id="toolbar">
     <span>Chunches</span>
     <button [routerLink]="['/products', 'all']" mat-button>Inicio
-        <mat-icon>add_shopping_cart</mat-icon>
+        <mat-icon>store</mat-icon>
     </button>
     <span class="toolbar-space"></span>
 
@@ -9,19 +9,19 @@
         <mat-icon>menu</mat-icon>
     </button> -->
   
-    <button disabled mat-button>
-        admin
+    <button mat-button>
+        {{user}}
         <mat-icon>account_box</mat-icon>
     </button>
     
     <button mat-button [routerLink]="['/products', 'list']">
         Mis Artículos
-        <mat-icon>assignment</mat-icon>
+        <mat-icon>dashboard</mat-icon>
     </button>
 
     <button mat-button [routerLink]="['/products', 'add']">
         Agregar Artículo
-        <mat-icon>add_to_queue</mat-icon>
+        <mat-icon>library_add</mat-icon>
     </button>
 
     <button mat-button (click)="logout()">
