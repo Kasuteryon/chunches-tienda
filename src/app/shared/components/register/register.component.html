@@ -1,14 +1,10 @@
 
-<img src="assets\ciudad.jpg"  style="background-repeat: no-repeat; height: 1000px; position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
 
 <mat-card>
     <mat-card-title>¡Regístrate! </mat-card-title>
     
     <mat-card-content>
-        <form [formGroup]="form">
-            <mat-card class="mat-card-warning" *ngIf="calcularEdad()<18">
-                <mat-label>Solo personas de 18 o mayores pueden registrarse.</mat-label>
-            </mat-card>
+        <form [formGroup]="birth">
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>Fecha de Nacimiento</mat-label>
@@ -17,6 +13,11 @@
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field>
             </p>
+        </form>
+        <form [formGroup]="form">
+            <mat-card class="mat-card-warning" *ngIf="calcularEdad()<18">
+                <mat-label>Solo personas de 18 o mayores pueden registrarse.</mat-label>
+            </mat-card>
 
             <div *ngIf="calcularEdad()>=18" class="animate__animated animate__backInDown">
                 <p>
@@ -38,7 +39,7 @@
                 <p>
                     <mat-form-field appearance="outline">
                         <mat-label>Escribe tu Nombre</mat-label>
-                        <input required matInput formControlName="name">
+                        <input required matInput formControlName="first_name">
                         
                     </mat-form-field>
                 </p>
@@ -46,7 +47,7 @@
                 <p>
                     <mat-form-field appearance="outline">
                         <mat-label>Escribe tu Apellido</mat-label>
-                        <input required matInput formControlName="lastName">
+                        <input required matInput formControlName="last_name">
                         
                     </mat-form-field>
                 </p>

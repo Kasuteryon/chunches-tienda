@@ -2,7 +2,7 @@
     display: flex;
 
     /*genera una fila cuando no hay espacio*/
-    flex-flow: row wrap;
+    flex-wrap: wrap;
 }
 
 .card-content{
@@ -11,6 +11,12 @@
     margin: 16px;
     cursor: pointer;
 }
+
+.card-content > img{
+    width: 275px;
+    height: fit-content;
+}
+
 .card-content-search {
     width: 100%;
     box-sizing: border-box;
@@ -20,10 +26,6 @@
     background-color: #9fe6a0;
 }
 
-img{
-    width: 150px;
-    height: 150px;
-}
 .mat-success {
     background-color: green;
     color: #fff;

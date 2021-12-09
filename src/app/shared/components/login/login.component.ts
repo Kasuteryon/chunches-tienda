@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ProductsService } from 'src/app/products/shared/services/products.service';
 import { User } from '../../models/user';
+import { AuthService } from 'src/app/products/shared/services/auth.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'ed-login',
@@ -17,13 +19,14 @@ export class LoginComponent{
   // Inicializamos un form gruoup con los campos
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
-    password: new FormControl('')
+    password : new FormControl('')
   }); 
 
 public id;
 
   constructor(private router: Router,
-              private service:ProductsService){
+              private service:ProductsService,
+              private authService:AuthService){
 
   }
 
@@ -36,25 +39,10 @@ public id;
 
   private validateLogin(user: User){
 
-    this.service.getAllUsers()
-    .subscribe(data => {
-      this.users = data;
-      
-      data.forEach(element => {
-        //console.log(element.username);
-        if(user.username === element.username ){
-          if (user.password === element.password)
-            this.router.navigate(['']);
-            this.id = element.id;
-          
-          //console.log(element.password);
-          
-        }else{
-          this.validFlag = false;
-          console.log("fallo alv");
-          
-        }
-      });
-    });
+    this.authService.login(user.username, user.password).pipe(first()).subscribe(
+      data => {
+        console.log(data)
+      }
+    )
   }
 }

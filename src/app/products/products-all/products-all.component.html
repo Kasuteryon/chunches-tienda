@@ -10,24 +10,29 @@
     </mat-card>
 </div>
 <div class="card-container">
-    <div *ngFor="let product of products.reverse() | appFilter:searchText">
+    <div *ngFor="let product of products | appFilter:searchText">
         <mat-card class="card-content animate__animated  animate__backInLeft">
             <mat-card-header>
-                <mat-card-title>{{product.title}}</mat-card-title>
-                <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
-                <img mat-card-img *ngIf="product.thumbImage" [src]="product.thumbImage">
+                <mat-card-title>{{product.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{product.marca}}</mat-card-subtitle>
+                
             </mat-card-header>
-    
+            <img mat-card-img *ngIf="product.imagen" src="http://127.0.0.1:8000{{product.imagen}}">
             <mat-card-content>
                 <p><b>Descripción:</b></p>
-                <p>{{product.description}}</p>
+                <p>{{product.descripcion}}</p>
+
                 <p><b>Estado:</b></p>
-                <p>{{product.status}}/10</p>
+                <p>{{product.estado}}/10</p>
+
+                <p><b>Categoría:</b></p>
+                <p>{{product.idcategoria}}</p>
             </mat-card-content>
     
             <mat-card-actions>
                 <button mat-raised-button class="btn-hover color-9">Me interesa</button>
             </mat-card-actions>
         </mat-card>
+
     </div>
 </div>

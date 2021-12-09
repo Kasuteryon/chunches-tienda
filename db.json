@@ -26,6 +26,15 @@
       "birthDate": "2000-12-26T06:00:00.000Z",
       "email": "ashly@gmail.com",
       "id": "cXZKfWJ"
+    },
+    {
+      "username": "Axelito",
+      "password": "12345",
+      "name": "Axel",
+      "lastName": "García",
+      "birthDate": "1999-11-06T06:00:00.000Z",
+      "email": "agarciadarce@gmail.com",
+      "id": "RnnyCzN"
     }
   ],
   "products": [
@@ -37,16 +46,6 @@
       "status": "10",
       "thumbImage": "https://intercompras.com/images/product/TOSHIBA_BUNDLE_21000M4_OF.jpg",
       "id": "2000313354"
-    },
-    {
-      "title": "Impresora",
-      "brand": "HP",
-      "price": "",
-      "description": "Impresora HP D530 con cabezales dañados. Para quien quierar repararla",
-      "status": "8",
-      "thumbImage": "https://comtech.com.ni/wp-content/uploads/2020/10/Impresora-HP-Todo-En-Uno-Deskjet-Ink-Advantage-2775.jpg",
-      "userId": "1",
-      "id": "2000311399"
     },
     {
       "title": "Walkie Talkie",
@@ -113,7 +112,8 @@
     },
     {
       "title": "Paralante Bluetooth",
-      "brand": "Sony",
+      "brand": "Pony",
+      "price": "",
       "description": "Sonido bajo, para quien quiera repararlo",
       "status": 5,
       "thumbImage": "https://www.sony.com.ni/image/2b952e6d337cfb1f90764b11a8576db2?fmt=pjpeg&wid=660&bgcolor=F1F5F9&bgc=F1F5F9",
@@ -129,6 +129,15 @@
       "thumbImage": "https://plazavea.vteximg.com.br/arquivos/ids/209219-450-450/20091204.jpg?v=636845452051870000",
       "userId": "1",
       "id": "P4Y2tOq"
+    },
+    {
+      "title": "Surface",
+      "brand": "Microsoft",
+      "description": "Poco uso, bisagras no funcion",
+      "status": 5,
+      "thumbImage": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c06596763.png",
+      "userId": "1",
+      "id": "MlW1Unt"
     }
   ]
 }

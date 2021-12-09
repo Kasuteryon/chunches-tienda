@@ -99,7 +99,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body{
     background-color: #f0f5ff;
-    background-image: url(./assets/ciudad.jpg);
+    background-image: url(./assets/back.svg);
     background-attachment: fixed;
     background-size: cover;
 }

@@ -15,7 +15,7 @@ const routes: Routes = [
       // Si cargamos productos redirecciona a products/list
       {path:'', pathMatch:'full', redirectTo:'all'},
       {path:'all', component:ProductsAllComponent},
-      {path:'list', component: ProductsListComponent},
+      {path:'list/:id', component: ProductsListComponent},
       {path:'add', component:ProductAddComponent},
       {path:'edit/:id', component:ProductEditComponent}]
   }

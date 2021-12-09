@@ -5,27 +5,38 @@
             <form [formGroup]="form">
                 <mat-form-field appearance="outline">
                     <mat-label>Nombre Artículo</mat-label>
-                    <input required matInput formControlName="title">
+                    <input required matInput formControlName="titulo">
                 </mat-form-field>
     
                 <mat-form-field appearance="outline">
                     <mat-label>Marca</mat-label>
-                    <input required matInput formControlName="brand">   
+                    <input required matInput formControlName="marca">   
                 </mat-form-field>
     
                 <mat-form-field appearance="outline">
                     <mat-label>Descripción</mat-label>
-                    <input required matInput formControlName="description">   
+                    <input required matInput formControlName="descripcion">   
                 </mat-form-field>
     
                 <mat-form-field appearance="outline">
                     <mat-label>Estado</mat-label>
-                    <input required type="number" max="10" min="1" matInput formControlName="status">   
+                    <input required type="number" max="10" min="1" matInput formControlName="estado">   
                 </mat-form-field>
     
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Imagen</mat-label>
+                    <input required matInput formControlName="imagen">   
+                </mat-form-field> -->
+                <input formControlName="imagen" type="file" name="profile" (change)="onChange($event)" />
+                
+
                 <mat-form-field appearance="outline">
-                    <mat-label>URL imagen</mat-label>
-                    <input required matInput formControlName="thumbImage">   
+                    <mat-label>Categoría</mat-label>
+                    <mat-select>
+                         <mat-option *ngFor="let cat of categories" [value]="cat.idcategoria">  
+                            {{cat.nombrecategoria}}
+                        </mat-option>
+                    </mat-select>
                 </mat-form-field>
             </form>
         </mat-card-content>

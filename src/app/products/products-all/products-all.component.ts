@@ -22,11 +22,15 @@ export class ProductsAllComponent implements OnInit {
     this.service.getAll()
     .subscribe(data => {
       this.products = data;
+      console.log(data)
     });
   }
 
   time(){
     setTimeout(function () {
+      this.products.forEach(product => {
+        
+      });
       return false;
     }, 1500);
     

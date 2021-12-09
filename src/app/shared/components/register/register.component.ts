@@ -13,13 +13,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
+    first_name: new FormControl(''),
+    last_name: new FormControl(''),
     username: new FormControl(''),
-    password: new FormControl(''),
-    name: new FormControl(''),
-    lastName: new FormControl(''),
-    birthDate: new FormControl(''),
-    email: new FormControl('')
+    email: new FormControl(''),
+    password : new FormControl(''),
+    
   });
+
+  birth: FormGroup = new FormGroup({
+    birthDate: new FormControl('')
+  });
+
   constructor(private router: Router,
               private service:ProductsService,
               private snackBar: MatSnackBar) { }
@@ -46,8 +51,8 @@ export class RegisterComponent implements OnInit {
   }
 
   calcularEdad(){
-    if (this.form.value.birthDate){
-      const convertAge = new Date(this.form.value.birthDate);
+    if (this.birth.value.birthDate){
+      const convertAge = new Date(this.birth.value.birthDate);
       const timeDiff = Math.abs(Date.now() - convertAge.getTime());
       return Math.floor((timeDiff / (1000 * 3600 * 24))/365);
     }

@@ -10,7 +10,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import {MatSelectModule} from '@angular/material/select';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 @NgModule({
   exports: [
@@ -24,7 +25,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSnackBarModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule,
+    MatFileUploadModule
   ]
 })
 export class MaterialModule {}
