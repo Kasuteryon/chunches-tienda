@@ -5,6 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ProductsService } from '../shared/services/products.service';
 import { Categories } from '../shared/models/categories';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'ed-product-add',
@@ -13,7 +14,7 @@ import { Categories } from '../shared/models/categories';
 })
 export class ProductAddComponent implements OnInit {
 
-  img = '';
+  img = null;
   form: FormGroup = new FormGroup({
     titulo:new FormControl(''),
     marca:new FormControl(''),
@@ -31,7 +32,8 @@ export class ProductAddComponent implements OnInit {
   
   constructor(private service:ProductsService,
               private route:Router,
-              private snackBar: MatSnackBar) { }
+              private snackBar: MatSnackBar,
+              private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.loadCategories();
@@ -56,16 +58,17 @@ export class ProductAddComponent implements OnInit {
   }
 
   onChange(event) {
-    if (event.target.files.length > 0) {
-      const file = event.target.files[0];
+     if (event.target.files.length > 0) {
+       const file = event.target.files[0];
       
-      this.img = file;
+       this.img = `http://localhost:8000/static/img/${file.name}`
 
-      console.log(this.img)
-    }
+       console.log(this.img)
+     }
+
+    console.log(this.img)
       
   }
-
 
   private loadCategories(){
     this.service.getCat()

@@ -1,4 +1,7 @@
 <mat-card class= "row animate__animated animate__backInDown">
+    <div class="animate__animated animate__backInDown" *ngIf="form.value.imagen" class="col">
+        <img  mat-card-img [src]="form.value.imagen">
+    </div>
     <div class="col">
         <mat-card-title>Agregar Artículo:</mat-card-title>
         <mat-card-content class="col">
@@ -28,7 +31,7 @@
                     <mat-label>Imagen</mat-label>
                     <input required matInput formControlName="imagen">   
                 </mat-form-field> -->
-                <input formControlName="imagen" type="file" name="profile" (change)="onChange($event)" />
+                <input formControlName="imagen" type="file" id="imagen" (change)="onChange($event)" />
                 
 
                 <mat-form-field appearance="outline">
@@ -47,7 +50,5 @@
         </mat-card-actions>
     </div>
     
-    <div *ngIf="form.value.imagen" class="col">
-        <img  mat-card-img [src]="form.value.imagen">
-    </div>
+    
 </mat-card>

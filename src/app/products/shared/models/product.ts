@@ -4,7 +4,7 @@ export interface Product {
     marca:string;
     descripcion:string;
     estado:number;
-    imagen:string;
+    imagen:File;
     vigente:boolean;
     idcategoria:string;
     idusuario:string;
