@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductsService } from '../shared/services/products.service';
 import { Product } from '../shared/models/product';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -14,7 +14,8 @@ import { ConfirmDialogModel } from 'src/app/shared/models/confirm-dialog-model';
 })
 export class ProductsListComponent implements OnInit {
   
-
+  user = JSON.parse(localStorage.getItem('currentUser'));
+  @Input() iduser:string = this.user.user_id;
   products: Product[];  
 
   constructor(private service: ProductsService,

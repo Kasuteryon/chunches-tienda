@@ -1,15 +1,15 @@
 
 <div class="card-container">
     <div *ngFor="let product of products.reverse()">
-        <mat-card *ngIf="product.userId == 1" class="card-content animate__animated animate__backInLeft" >
+        <mat-card *ngIf="product.iduser == iduser" class="card-content animate__animated animate__backInLeft" >
             <mat-card-header>
-                <mat-card-title>{{product.title}}</mat-card-title>
-                <mat-card-subtitle>{{product.brand}}</mat-card-subtitle>
-                <img mat-card-img *ngIf="product.thumbImage" [src]="product.thumbImage">
+                <mat-card-title>{{product.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{product.marca}}</mat-card-subtitle>
+                <img mat-card-img *ngIf="product.imagen" src="http://127.0.0.1:8000{{product.imagen}}">
             </mat-card-header>
     
             <mat-card-actions>
-                <button class="btn-hover color-5" mat-raised-button [routerLink]="['/products','edit',product.id]">Editar</button>
+                <button class="btn-hover color-5" mat-raised-button [routerLink]="['/products','edit',product.idproducto]">Editar</button>
                 <button class="btn-hover color-11" mat-raised-button (click)="delete(product)">Eliminar</button>
             </mat-card-actions>
         </mat-card>

@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { stringify } from 'querystring';
 
-
 @Component({
   selector: 'ed-toolbar',
   templateUrl: './toolbar.component.html',
@@ -14,13 +13,14 @@ import { stringify } from 'querystring';
 export class ToolbarComponent implements OnInit {
 
   @Input() user:String;
-  
+  us = JSON.parse(localStorage.getItem('currentUser'));
+  @Input() id = this.us.user_id;
 
   constructor(private authService:AuthService){}
   ngOnInit(): void {
     let userJ = JSON.parse(localStorage.getItem('currentUser'));
     this.user = userJ.username;
-    
+    console.log(this.id)
   }
 
   logout(){

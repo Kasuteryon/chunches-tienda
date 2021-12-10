@@ -3,6 +3,13 @@
     justify-content: center;
 }
 
+.file-input {
+    display: none;
+  }
+
+.file-upload > button{
+    background-color: #25aae1 !important;
+}
 mat-card,
 form{
     margin: 10px;

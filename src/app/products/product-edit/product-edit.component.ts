@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../shared/services/products.service';
@@ -11,6 +11,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
+
+  user = JSON.parse(localStorage.getItem('currentUser'));
+  @Input() iduser:string = this.user.user_id;
 
   form: FormGroup = new FormGroup({
     title: new FormControl(''),

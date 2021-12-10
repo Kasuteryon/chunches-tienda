@@ -31,12 +31,22 @@
                     <mat-label>Imagen</mat-label>
                     <input required matInput formControlName="imagen">   
                 </mat-form-field> -->
-                <input formControlName="imagen" type="file" id="imagen" (change)="onChange($event)" />
+                <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+                
+                <div class="file-upload">
+
+                    {{fileName || "Foto no seleccionada."}}
+                 
+                     <button class="up" mat-mini-fab class="upload-btn"
+                       (click)="fileUpload.click()">
+                         <mat-icon>attach_file</mat-icon>
+                     </button>
+                 </div>
                 
 
                 <mat-form-field appearance="outline">
                     <mat-label>Categoría</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="idcategoria">
                          <mat-option *ngFor="let cat of categories" [value]="cat.idcategoria">  
                             {{cat.nombrecategoria}}
                         </mat-option>
