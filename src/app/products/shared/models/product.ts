@@ -7,5 +7,5 @@ export interface Product {
     imagen:File;
     vigente:boolean;
     idcategoria:string;
-    idusuario:string;
+    iduser:string;
 }

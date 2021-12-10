@@ -35,11 +35,11 @@ export class ProductsService {
   }
   
   get(id: string): Observable<Product>{
-    return this.httpClient.get<Product>(`${PRODUCT}/${id}`);
+    return this.httpClient.get<Product>(`${PRODUCT}${id}`);
   }
 
   update(product: Product): Observable<Product>{
-    return this.httpClient.put<Product>(`${PRODUCT}/${product.id}`, product);
+    return this.httpClient.put<Product>(`${PRODUCT}${product.id}/`, product);
   }
 
   delete(id:string): Observable<Product>{
