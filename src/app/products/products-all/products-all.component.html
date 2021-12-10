@@ -6,7 +6,7 @@
 </div>
 <div class="card-container">
     <div *ngFor="let product of products | appFilter:searchText">
-        <mat-card class="card-content animate__animated  animate__backInLeft">
+        <mat-card style="text-align: center;" class="card-content animate__animated  animate__backInLeft">
             <mat-card-header>
                 <mat-card-title>{{product.titulo}}</mat-card-title>
                 <mat-card-subtitle style="color: white;">{{product.marca}}</mat-card-subtitle>
@@ -18,15 +18,25 @@
                     <p><b>Descripción:</b></p>
                     <p>{{product.descripcion}}</p>
     
-                    <p><b>Estado:</b></p>
-                    <p>{{product.estado}}/10</p>
+                    <div class="row">
+                        <div class="col">
+                            <p><b>Estado:</b></p>
+                            <p>{{product.estado}}/10</p>
     
-                    <p><b>Categoría:</b></p>
-                    <p>{{product.idcategoria}}</p>
+                        </div>
+                        <div class="col">
+                            <p><b>Categoría:</b></p>
+                            <p *ngIf="product.idcategoria == 1">Electrónica</p>
+                            <p *ngIf="product.idcategoria == 2">Ropa Infantil</p>
+                            <p *ngIf="product.idcategoria == 3">Ropa Mujeres</p>
+                            <p *ngIf="product.idcategoria == 4">Vehículos</p>
+                        </div>
+
+                    </div>
                 </mat-card-content>
         
                 <mat-card-actions>
-                    <button mat-raised-button class="btn-hover color-9">Me interesa</button>
+                    <button mat-raised-button class="all btn-hover color-9">Me interesa</button>
                 </mat-card-actions>
             </div>
         </mat-card>

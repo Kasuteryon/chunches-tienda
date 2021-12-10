@@ -48,11 +48,12 @@ export class ProductsListComponent implements OnInit {
     this.service.getAll()
     .subscribe(data => {
       this.products = data;
+      console.log(this.products)
     });
   }
 
-  private deleteProduct(product: Product){
-    this.service.delete(product.id).subscribe(response =>{
+  private deleteProduct(product){
+    this.service.delete(product.idproducto).subscribe(response =>{
       this.loadProduct();
       this.snackBar.open('Artículo Eliminado', 'Cerrar', {duration:3000});
       this.router.navigate(['']);

@@ -43,7 +43,7 @@ export class ProductsService {
   }
 
   delete(id:string): Observable<Product>{
-    return this.httpClient.delete<Product>(`${PRODUCT}/${id}`);
+    return this.httpClient.delete<Product>(`${PRODUCT}${id}`);
   }
 
   // On users

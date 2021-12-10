@@ -46,3 +46,7 @@ img{
     padding: 0;
   }
 
+.cont > img{
+    width: 300px !important;
+    height: fit-content !important;
+}

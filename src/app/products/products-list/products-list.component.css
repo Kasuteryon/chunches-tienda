@@ -21,3 +21,15 @@ img{
     background-color: green;
     color: #fff;
 }
+
+.tab-container{
+    margin: 50px !important;
+}
+
+table{
+    border-radius: 15px !important;
+}
+
+.tab{
+    width: 50px !important;
+}

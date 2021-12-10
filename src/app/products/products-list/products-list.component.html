@@ -1,18 +1,42 @@
 
-<div class="card-container">
-    <div *ngFor="let product of products.reverse()">
-        <mat-card *ngIf="product.iduser == iduser" class="card-content animate__animated animate__backInLeft" >
-            <mat-card-header>
-                <mat-card-title>{{product.titulo}}</mat-card-title>
-                <mat-card-subtitle>{{product.marca}}</mat-card-subtitle>
-                <img mat-card-img *ngIf="product.imagen" src="http://127.0.0.1:8000{{product.imagen}}">
-            </mat-card-header>
-    
-            <mat-card-actions>
-                <button class="btn-hover color-5" mat-raised-button [routerLink]="['/products','edit',product.idproducto]">Editar</button>
-                <button class="btn-hover color-11" mat-raised-button (click)="delete(product)">Eliminar</button>
-            </mat-card-actions>
+<div class="tab-container">
+        
+        <mat-card class="animate__animated animate__backInLeft table-responsive" >
+            <table class="table table-hover table-bordered align-middle">
+                <thead class="table-dark">
+                  <tr>
+                    <th class="text-center" scope="col">Artículo</th>
+                    <th class="text-center" scope="col">Título</th>
+                    <th class="text-center" scope="col">Marca</th>
+                    <th class="text-center" scope="col">Descripción</th>
+                    <th class="text-center" scope="col">Categoría</th>
+                    <th class="text-center" scope="col">Editar</th>
+                    <th class="text-center" scope="col">Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let product of products" >
+                    <td class="text-center" *ngIf="product.iduser == iduser" scope="row"><img src="http://127.0.0.1:8000{{product.imagen}}" alt=""></td>
+                    <td class="text-center" *ngIf="product.iduser == iduser"> {{product.titulo}}</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser">{{product.marca}}</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser">{{product.descripcion}}</td>
+
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 1">Electrónica</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 2">Ropa Infantil</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 3">Ropa Mujeres</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 4">Vehículos</td>
+                            
+                    <td class="text-center" *ngIf="product.iduser == iduser">
+                        <button class="btn-hover tab color-5" mat-raised-button [routerLink]="['/products','edit',product.idproducto]"><mat-icon>edit</mat-icon></button>
+                    </td>
+                    <td class="text-center" *ngIf="product.iduser == iduser">
+                        <button class="btn-hover tab color-11" mat-raised-button (click)="delete(product)"><mat-icon>close</mat-icon></button>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
         </mat-card>
-    </div>
+    
     
 </div>

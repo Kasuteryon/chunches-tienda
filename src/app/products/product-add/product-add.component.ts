@@ -26,7 +26,7 @@ export class ProductAddComponent implements OnInit {
     imagen:new FormControl(''),
     vigente:new FormControl(true),
     idcategoria:new FormControl(''),
-    idusuario:new FormControl(this.iduser),
+    iduser:new FormControl(this.iduser),
     identrega: new FormControl(1)
   });
 

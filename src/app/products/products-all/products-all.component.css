@@ -63,3 +63,13 @@
 }
 
 /* INPUT*/
+mat-card-title{
+    text-align: center;
+}
+mat-card-content{
+    font-size: medium;
+}
+
+.all{
+    width: 265px;
+}
