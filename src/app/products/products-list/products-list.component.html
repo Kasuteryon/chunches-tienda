@@ -16,7 +16,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let product of products" >
-                    <td class="text-center" *ngIf="product.iduser == iduser" scope="row"><img src="http://127.0.0.1:8000{{product.imagen}}" alt=""></td>
+                    <td class="text-center" *ngIf="product.iduser == iduser" scope="row"><img src="http://192.168.1.12:8000{{product.imagen}}" alt=""></td>
                     <td class="text-center" *ngIf="product.iduser == iduser"> {{product.titulo}}</td>
                     <td class="text-center" *ngIf="product.iduser == iduser">{{product.marca}}</td>
                     <td class="text-center" *ngIf="product.iduser == iduser">{{product.descripcion}}</td>

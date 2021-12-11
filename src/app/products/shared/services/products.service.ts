@@ -11,9 +11,9 @@ import { Categories } from '../models/categories';
 const PRODUCTS_URL = 'http://localhost:3000/products';
 const USERS_URL = 'http://localhost:3000/users';
 
-const USER = 'http://127.0.0.1:8000/api/users/'
-const PRODUCT = 'http://127.0.0.1:8000/api/products/'
-const CAT = 'http://127.0.0.1:8000/api/categories/'
+const USER = 'http://192.168.1.12:8000/api/users/'
+const PRODUCT = 'http://192.168.1.12:8000/api/products/'
+const CAT = 'http://192.168.1.12:8000/api/categories/'
 
 @Injectable({
   providedIn: 'root'
