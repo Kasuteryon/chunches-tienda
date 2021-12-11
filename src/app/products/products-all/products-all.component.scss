@@ -1,0 +1,80 @@
+.card-container{
+    display: flex;
+
+    /*genera una fila cuando no hay espacio*/
+    flex-wrap: wrap;
+}
+
+.card-content{
+    width: 300px;
+    box-sizing: border-box;
+    margin: 16px;
+    cursor: pointer;
+    box-shadow: rgba(136, 172, 243, 0.25) 0px 10px 30px, rgba(0, 0, 0, 0.03) 0px 1px 1px,
+    rgba(47, 62, 96, 0.01) 0px 10px 20px, rgba(76, 102, 148, 0.13) 0px 1px 3px;
+    padding: 0;
+}
+
+.card-content > img{
+    width: 300px;
+    height: fit-content;
+}
+
+.mat-card-header{
+    background-color: #2bb673;
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.body{
+    margin: 20px;
+}
+
+
+.card-content-search {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    /* background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673); 
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);*/
+    box-shadow: rgba(136, 172, 243, 0.25) 0px 10px 30px, rgba(0, 0, 0, 0.03) 0px 1px 1px,
+    rgba(47, 62, 96, 0.01) 0px 10px 20px, rgba(76, 102, 148, 0.13) 0px 1px 3px;
+}
+
+.mat-success {
+    background-color: green;
+    color: #fff;
+}
+
+.mat-icon{
+    color: #2bb673;
+    font-weight: 400;
+    align-self: center;
+}
+.search{
+    width: 100%;
+    border: none;
+    background: none;
+    height: 40px;
+    outline: none;
+}
+
+/* INPUT*/
+mat-card-title{
+    text-align: center;
+}
+mat-card-content{
+    font-size: medium;
+}
+
+.all{
+    width: 265px;
+}
+.valign-center {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
+}

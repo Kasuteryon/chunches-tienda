@@ -1,12 +1,12 @@
 
 <div class="card-container">
-    <mat-card class="card-content-search">
-        <input placeholder="Buscar..." class="search" matInput [(ngModel)]="searchText"><mat-icon>search</mat-icon>
+    <mat-card class="card-content-search animate__animated animate__flipInX ">
+        <input placeholder="Buscar..." class="search animate__animated animate__rollIn " matInput [(ngModel)]="searchText"><mat-icon>search</mat-icon>
     </mat-card>
 </div>
 <div class="card-container">
     <div *ngFor="let product of products | appFilter:searchText">
-        <mat-card style="text-align: center;" class="card-content animate__animated  animate__backInLeft">
+        <mat-card style="text-align: center;" class="card-content animate__animated  animate__flipInX">
             <mat-card-header>
                 <mat-card-title>{{product.titulo}}</mat-card-title>
                 <mat-card-subtitle style="color: white;">{{product.marca}}</mat-card-subtitle>

@@ -1,4 +1,5 @@
-<mat-toolbar id="toolbar">
+<mat-toolbar>
+
     <span>Chunches</span>
     <button [routerLink]="['/products', 'all']" mat-button>Inicio
         <mat-icon>store</mat-icon>
@@ -14,23 +15,42 @@
         <mat-icon>account_box</mat-icon>
     </button>
     
-    <button mat-button [routerLink]="['/products', 'list', id]">
-        Mis Artículos
-        <mat-icon>dashboard</mat-icon>
-    </button>
+    <div class="big">
+        <button mat-button [routerLink]="['/products', 'list', id]">
+            Mis Artículos
+            <mat-icon>dashboard</mat-icon>
+        </button>
+    
+        <button mat-button [routerLink]="['/products', 'add']">
+            Agregar Artículo
+            <mat-icon>library_add</mat-icon>
+        </button>
+    
+        <button mat-button (click)="logout()">
+                Cerrar Sesión
+                <mat-icon>input</mat-icon>
+        </button>
+    </div>
 
-    <button mat-button [routerLink]="['/products', 'add']">
-        Agregar Artículo
-        <mat-icon>library_add</mat-icon>
-    </button>
-
-    <button mat-button (click)="logout()">
-            Cerrar Sesión
-            <mat-icon>input</mat-icon>
-    </button>
-
-
-    <mat-menu #menu>
-        <button mat-menu-item [routerLink]="['/products', 'add']">Agregar Artículo</button>
-    </mat-menu>
+    <div class="small" fxFlex fxLayout="row">
+        <a class="valign-center" mat-icon-button [matMenuTriggerFor]="menu" aria-label="additional links">
+            <mat-icon>menu</mat-icon>
+        </a>
+        <mat-menu #menu="matMenu">
+            <button mat-button [routerLink]="['/products', 'list', id]">
+                Mis Artículos
+                <mat-icon>dashboard</mat-icon>
+            </button>
+        
+            <button mat-button [routerLink]="['/products', 'add']">
+                Agregar Artículo
+                <mat-icon>library_add</mat-icon>
+            </button>
+        
+            <button mat-button (click)="logout()">
+                    Cerrar Sesión
+                    <mat-icon>input</mat-icon>
+            </button>
+        </mat-menu>
+    </div>
 </mat-toolbar>
