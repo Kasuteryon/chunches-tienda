@@ -4,8 +4,9 @@ import { ProductAddComponent } from './product-add/product-add.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductsAllComponent } from './products-all/products-all.component';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ProductsComponent } from './products.component';
-
 
 const routes: Routes = [
   {
@@ -17,7 +18,9 @@ const routes: Routes = [
       {path:'all', component:ProductsAllComponent},
       {path:'list/:id', component: ProductsListComponent},
       {path:'add', component:ProductAddComponent},
-      {path:'edit/:id', component:ProductEditComponent}]
+      {path:'edit/:id', component:ProductEditComponent},
+      {path: 'detail/:id', component: ProductDetailComponent},
+      {path: 'profile', component: ProfileComponent}]
   }
 ];
 

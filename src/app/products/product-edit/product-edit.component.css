@@ -50,3 +50,11 @@ img{
     width: 300px !important;
     height: fit-content !important;
 }
+
+@media (max-width: 800px) {
+    mat-card,
+    form{
+        margin: 20px;
+        width: 100%;
+    }
+}

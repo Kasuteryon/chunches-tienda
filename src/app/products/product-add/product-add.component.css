@@ -12,8 +12,8 @@
 }
 mat-card,
 form{
-    margin: 10px;
-    width: 70%;
+    margin: 70px;
+    width: 100%;
 }
 
 img{
@@ -43,7 +43,7 @@ mat-card-actions{
 
 img{
     width: 300px;
-    height: 300px;
+    height: fit-content;
 }
 
 .row {
@@ -53,3 +53,11 @@ img{
   .col {
     padding: 0;
   }
+
+@media (max-width: 800px) {
+    mat-card,
+    form{
+        margin: 20px;
+        width: 100%;
+    }
+}

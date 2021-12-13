@@ -33,3 +33,7 @@ table{
 .tab{
     width: 50px !important;
 }
+
+mat-card{
+    margin-bottom: 30px;
+}

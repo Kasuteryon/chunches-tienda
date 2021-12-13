@@ -22,10 +22,6 @@ mat-toolbar{
     color: white !important;
 }
 
-.mat-menu-content{
-    background: #25aae1 !important;
-}
-
 @media (max-width: 800px) {
     .big {
       display: none !important;

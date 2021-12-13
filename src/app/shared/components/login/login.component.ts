@@ -47,5 +47,6 @@ public id;
         this.router.navigate(['']);
       }
     )
+    this.validFlag = false;
   }
 }

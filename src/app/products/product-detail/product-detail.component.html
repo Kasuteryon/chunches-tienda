@@ -1,0 +1,45 @@
+
+<div class="card-container row">
+    
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <mat-card style="text-align: center;" class="card-content animate__animated  animate__flipInX">
+                <mat-card-header>
+                    <mat-card-title>{{products.titulo}}</mat-card-title>
+                    <mat-card-subtitle style="color: white;">{{products.marca}}</mat-card-subtitle>
+                    
+                </mat-card-header>
+                <img mat-card-img *ngIf="products.imagen" src="http://192.168.1.12:8000{{products.imagen}}">
+                <div class="body">
+                    <mat-card-content>
+                        <p><b>Descripción:</b></p>
+                        <p>{{products.descripcion}}</p>
+        
+                        <div class="row">
+                            <div class="col">
+                                <p><b>Estado:</b></p>
+                                <p>{{products.estado}}/10</p>
+        
+                            </div>
+                            <div class="col">
+                                <p><b>Categoría:</b></p>
+                                <p *ngIf="products.idcategoria == 1">Electrónica</p>
+                                <p *ngIf="products.idcategoria == 2">Ropa Infantil</p>
+                                <p *ngIf="products.idcategoria == 3">Ropa Mujeres</p>
+                                <p *ngIf="products.idcategoria == 4">Vehículos</p>
+                            </div>
+    
+                        </div>
+                    </mat-card-content>
+            
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12">
+            <mat-card class="donante">
+                <mat-card-header class="donante-header">
+                    <mat-card-title >Contacta al Donante</mat-card-title>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    
+</div>

@@ -5,7 +5,7 @@ import { ProductsService } from '../shared/services/products.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Categories } from '../shared/models/categories';
-
+import { Estados } from '../shared/models/estados';
 
 @Component({
   selector: 'ed-product-edit',
@@ -16,6 +16,7 @@ export class ProductEditComponent implements OnInit {
   
   fileName = '';
   categories:Categories[];
+  estados:Estados[];
   user = JSON.parse(localStorage.getItem('currentUser'));
   @Input() iduser:string = this.user.user_id;
   @Input() img;
@@ -27,7 +28,8 @@ export class ProductEditComponent implements OnInit {
     estado:new FormControl(''),
     //imagen:new FormControl(''),
     vigente:new FormControl(true),
-    idcategoria:new FormControl('')
+    idcategoria:new FormControl(''),
+    identrega: new FormControl('')
   });
   
 
@@ -40,6 +42,7 @@ export class ProductEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCategories();
+    this.loadEstado();
     this.id = this.route.snapshot.paramMap.get('id');
     this.service.get(this.id)
       .subscribe(product =>{
@@ -78,4 +81,10 @@ export class ProductEditComponent implements OnInit {
     });
   }
 
+  private loadEstado(){
+    this.service.getStatus()
+      .subscribe(data => {
+        this.estados = data;
+      });
+  }
 }

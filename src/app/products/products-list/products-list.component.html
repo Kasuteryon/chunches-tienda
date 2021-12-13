@@ -2,7 +2,11 @@
 <div class="tab-container">
         
         <mat-card class="animate__animated animate__backInLeft table-responsive" >
-            <table class="table table-hover table-bordered align-middle">
+            <mat-card-header>
+              <mat-card-title>Publicados</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <table class="table table-hover table-bordered align-middle">
                 <thead class="table-dark">
                   <tr>
                     <th class="text-center" scope="col">Artículo</th>
@@ -16,27 +20,106 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let product of products" >
-                    <td class="text-center" *ngIf="product.iduser == iduser" scope="row"><img src="http://192.168.1.12:8000{{product.imagen}}" alt=""></td>
-                    <td class="text-center" *ngIf="product.iduser == iduser"> {{product.titulo}}</td>
-                    <td class="text-center" *ngIf="product.iduser == iduser">{{product.marca}}</td>
-                    <td class="text-center" *ngIf="product.iduser == iduser">{{product.descripcion}}</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1" scope="row"><img src="http://192.168.1.12:8000{{product.imagen}}" alt=""></td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1"> {{product.titulo}}</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1">{{product.marca}}</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1">{{product.descripcion}}</td>
 
-                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 1">Electrónica</td>
-                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 2">Ropa Infantil</td>
-                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 3">Ropa Mujeres</td>
-                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 4">Vehículos</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 1 && product.identrega == 1">Electrónica</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 2 && product.identrega == 1">Ropa Infantil</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 3 && product.identrega == 1">Ropa Mujeres</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 4 && product.identrega == 1">Vehículos</td>
                             
-                    <td class="text-center" *ngIf="product.iduser == iduser">
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1">
                         <button class="btn-hover tab color-5" mat-raised-button [routerLink]="['/products','edit',product.idproducto]"><mat-icon>edit</mat-icon></button>
                     </td>
-                    <td class="text-center" *ngIf="product.iduser == iduser">
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1">
                         <button class="btn-hover tab color-11" mat-raised-button (click)="delete(product)"><mat-icon>close</mat-icon></button>
                     </td>
                   </tr>
                   
                 </tbody>
               </table>
+            </mat-card-content>
         </mat-card>
+
+        <mat-card class="animate__animated animate__backInLeft table-responsive" >
+          <mat-card-header>
+            <mat-card-title>Donados - En Espera</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <table class="table table-hover table-bordered align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th class="text-center" scope="col">Artículo</th>
+                  <th class="text-center" scope="col">Título</th>
+                  <th class="text-center" scope="col">Marca</th>
+                  <th class="text-center" scope="col">Descripción</th>
+                  <th class="text-center" scope="col">Categoría</th>
+                  <th class="text-center" scope="col">Editar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of products" >
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 2" scope="row"><img src="http://192.168.1.12:8000{{product.imagen}}" alt=""></td>
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 2"> {{product.titulo}}</td>
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 2">{{product.marca}}</td>
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 2">{{product.descripcion}}</td>
+
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 1 && product.identrega == 2">Electrónica</td>
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 2 && product.identrega == 2">Ropa Infantil</td>
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 3 && product.identrega == 2">Ropa Mujeres</td>
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 4 && product.identrega == 2">Vehículos</td>
+                          
+                  <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 2">
+                      <button class="btn-hover tab color-5" mat-raised-button [routerLink]="['/products','edit',product.idproducto]"><mat-icon>edit</mat-icon></button>
+                  </td>
+                  
+                </tr>
+                
+              </tbody>
+            </table>
+          </mat-card-content>
+      </mat-card>
+
+      <mat-card class="animate__animated animate__backInLeft table-responsive" >
+        <mat-card-header>
+          <mat-card-title>Donados - Entregados</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <table class="table table-hover table-bordered align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th class="text-center" scope="col">Artículo</th>
+                <th class="text-center" scope="col">Título</th>
+                <th class="text-center" scope="col">Marca</th>
+                <th class="text-center" scope="col">Descripción</th>
+                <th class="text-center" scope="col">Categoría</th>
+                <th class="text-center" scope="col">Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products" >
+                <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 3" scope="row"><img src="http://192.168.1.12:8000{{product.imagen}}" alt=""></td>
+                <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 3"> {{product.titulo}}</td>
+                <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 3">{{product.marca}}</td>
+                <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 3">{{product.descripcion}}</td>
+
+                <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 1 && product.identrega == 3">Electrónica</td>
+                <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 2 && product.identrega == 3">Ropa Infantil</td>
+                <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 3 && product.identrega == 3">Ropa Mujeres</td>
+                <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 4 && product.identrega == 3">Vehículos</td>
+                        
+                <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 3">
+                    <button class="btn-hover tab color-5" mat-raised-button [routerLink]="['/products','edit',product.idproducto]"><mat-icon>edit</mat-icon></button>
+                </td>
+                
+              </tr>
+              
+            </tbody>
+          </table>
+        </mat-card-content>
+    </mat-card>
     
     
 </div>

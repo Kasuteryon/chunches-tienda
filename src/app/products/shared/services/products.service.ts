@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from 'src/app/shared/models/user';
 import { Product } from '../models/product';
 import { Categories } from '../models/categories';
+import { Estados } from '../models/estados';
 
 //const PRODUCTS_URL = 'http://192.168.1.8:3000/products';
 //const USERS_URL = 'http://192.168.1.8:3000/users';
@@ -14,6 +15,7 @@ const USERS_URL = 'http://localhost:3000/users';
 const USER = 'http://192.168.1.12:8000/api/users/'
 const PRODUCT = 'http://192.168.1.12:8000/api/products/'
 const CAT = 'http://192.168.1.12:8000/api/categories/'
+const ESTADOS = 'http://192.168.1.12:8000/api/estado/'
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +30,10 @@ export class ProductsService {
 
   getCat(): Observable<Categories[]>{
     return this.httpClient.get<Categories[]>(`${CAT}`);
+  }
+
+  getStatus(): Observable<Estados[]>{
+    return this.httpClient.get<Estados[]>(`${ESTADOS}`);
   }
 
   add(product: Product):Observable<Product>{

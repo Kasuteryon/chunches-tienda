@@ -14,11 +14,15 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductsAllComponent } from './products-all/products-all.component';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
   declarations: [ProductsComponent, ProductsListComponent, ProductAddComponent, ProductEditComponent, ProductsAllComponent,
-  FilterPipe],
+  FilterPipe,
+  ProductDetailComponent,
+  ProfileComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,

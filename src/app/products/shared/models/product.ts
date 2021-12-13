@@ -6,6 +6,6 @@ export interface Product {
     estado:number;
     imagen:File;
     vigente:boolean;
-    idcategoria:string;
+    idcategoria:number;
     iduser:string;
 }
