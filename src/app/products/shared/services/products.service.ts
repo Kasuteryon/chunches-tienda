@@ -5,6 +5,7 @@ import { User } from 'src/app/shared/models/user';
 import { Product } from '../models/product';
 import { Categories } from '../models/categories';
 import { Estados } from '../models/estados';
+import { Coments } from '../models/coments';
 
 //const PRODUCTS_URL = 'http://192.168.1.8:3000/products';
 //const USERS_URL = 'http://192.168.1.8:3000/users';
@@ -16,6 +17,7 @@ const USER = 'http://192.168.1.12:8000/api/users/'
 const PRODUCT = 'http://192.168.1.12:8000/api/products/'
 const CAT = 'http://192.168.1.12:8000/api/categories/'
 const ESTADOS = 'http://192.168.1.12:8000/api/estado/'
+const COMENT = 'http://192.168.1.12:8000/api/comments/'
 
 @Injectable({
   providedIn: 'root'
@@ -36,10 +38,22 @@ export class ProductsService {
     return this.httpClient.get<Estados[]>(`${ESTADOS}`);
   }
 
+  getComent(idproducto:number): Observable<Coments[]>{
+    return this.httpClient.get<Coments[]>(`${COMENT}${idproducto}`)
+  }
+
+  addComent(coment: Coments): Observable<Coments>{
+    return this.httpClient.post<Coments>(`${COMENT}`, coment);
+  }
+
+  getUser(id:number): Observable<User>{
+    return this.httpClient.get<User>(`${USER}${id}`);
+  }
+
   add(product: Product):Observable<Product>{
     return this.httpClient.post<Product>(`${PRODUCT}`, product);
   }
-  
+
   get(id: string): Observable<Product>{
     return this.httpClient.get<Product>(`${PRODUCT}${id}`);
   }
@@ -56,7 +70,5 @@ export class ProductsService {
   addUser(user: User):Observable<User>{
     return this.httpClient.post<User>(`${USER}`, user);
   }
-  getAllUsers(): Observable<User[]>{
-    return this.httpClient.get<User[]>(`${USER}`);
-  }
+  
 }
