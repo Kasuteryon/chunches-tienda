@@ -43,19 +43,21 @@
                     <form [formGroup]="form">
                         <mat-form-field appearance="outline">
                             <mat-label>Escríbe...</mat-label>
-                            <input class="mensaje" required matInput formControlName="mensaje">
+                            <input class="mensaje" required matInput formControlName="comentario">
                         </mat-form-field>
                     </form>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button><mat-icon>send</mat-icon></button>
+                    <button (click)="submit()" mat-raised-button><mat-icon>send</mat-icon></button>
                 </mat-card-actions>
             </mat-card>
+
             <mat-card class="donante">
                 <mat-card-header class="donante-header">
                     <mat-card-title>Mensajes</mat-card-title>
                 </mat-card-header>
             </mat-card>
+            
             <mat-card class="donante" *ngFor="let coment of coments">
                 <mat-card-title>Por {{coment.iduser}}</mat-card-title>
                 <mat-card-content>

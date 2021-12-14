@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ProductsService } from '../shared/services/products.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Coments } from '../shared/models/coments';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'ed-product-detail',
@@ -15,12 +16,19 @@ export class ProductDetailComponent implements OnInit {
   products: Product;
   coments: Coments[];
   id;
+  user = JSON.parse(localStorage.getItem('currentUser'));
+  iduser = this.user.user_id;
 
   form: FormGroup = new FormGroup({
-    mensaje:new FormControl('')
+    comentario:new FormControl(''),
+    idproducto:new FormControl(''),
+    iduser: new FormControl(''),
+    fecha: new FormControl('')
   });
   constructor(private service: ProductsService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private route2: Router,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.loadProduct();
@@ -35,6 +43,29 @@ export class ProductDetailComponent implements OnInit {
         
         this.products = product;
       });
+  }
+
+  submit(){
+    if (this.form.valid){
+      const date: Date = new Date();
+
+      this.form.value.idproducto = this.id;
+      this.form.value.iduser = this.iduser;
+      this.form.value.fecha = date;
+      const COMENT = this.form.value;
+
+      console.log(this.form.value.idproducto)
+
+      console.log(COMENT)
+
+      this.service.addComent(COMENT).subscribe(result => {
+        this.route2.navigate(['/products', 'detail', this.id]);
+        this.snackBar.open('Comentario Añadido', 'Cerrar', {
+          duration: 3000
+        })
+
+      });
+    }
   }
 
   private loadComments(){
