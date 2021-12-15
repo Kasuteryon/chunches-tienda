@@ -30,6 +30,9 @@
                     <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 2 && product.identrega == 1">Ropa Infantil</td>
                     <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 3 && product.identrega == 1">Ropa Mujeres</td>
                     <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 4 && product.identrega == 1">Vehículos</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 5 && product.identrega == 1">Hogar</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 6 && product.identrega == 1">Ropa Hombres</td>
+                    <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 7 && product.identrega == 1">Muebles</td>
                             
                     <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1">
                         <button class="btn-hover tab color-3" mat-raised-button [routerLink]="['/products','detail',product.idproducto]"><mat-icon>remove_red_eye</mat-icon></button>

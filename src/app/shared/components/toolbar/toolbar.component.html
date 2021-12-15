@@ -1,6 +1,6 @@
 <mat-toolbar>
 
-    <span>Chunches</span>
+    <span><img class="logo" src="../../../../assets/logo.png" alt="Logo"> <h6>Chunches</h6></span>
     <button [routerLink]="['/products', 'all']" mat-button>Inicio
         <mat-icon>store</mat-icon>
     </button>
@@ -10,15 +10,15 @@
         <mat-icon>menu</mat-icon>
     </button> -->
   
-    <button mat-button [routerLink]="['/products', 'profile']">
+    <button mat-button>
         {{user}}
-        <mat-icon>account_box</mat-icon>
+        <mat-icon>account_circle</mat-icon>
     </button>
     
     <div class="big">
         <button mat-button [routerLink]="['/products', 'list', id]">
             Mis Artículos
-            <mat-icon>dashboard</mat-icon>
+            <mat-icon>collections_bookmark</mat-icon>
         </button>
     
         <button mat-button [routerLink]="['/products', 'add']">
@@ -28,7 +28,7 @@
     
         <button mat-button (click)="logout()">
                 Cerrar Sesión
-                <mat-icon>input</mat-icon>
+                <mat-icon>exit_to_app</mat-icon>
         </button>
     </div>
 
