@@ -26,6 +26,7 @@
     "angular-material-fileupload": "^3.0.2",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.1",
+    "http-server": "^14.0.0",
     "rxjs": "~6.6.0",
     "rxjs-compat": "^6.6.7",
     "rxjs-operators": "^1.1.3",
