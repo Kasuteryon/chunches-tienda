@@ -90,3 +90,34 @@ mat-card-content{
     margin-bottom: 30px;
 }
 
+.mensaje{
+    width: 100%;
+    border: none;
+    background: none;
+    height: 40px;
+    outline: none;
+}
+
+.card-content-search {
+    width: 95%;
+    box-sizing: border-box;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    /* background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673); 
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);*/
+    box-shadow: rgba(136, 172, 243, 0.25) 0px 10px 30px, rgba(0, 0, 0, 0.03) 0px 1px 1px,
+    rgba(47, 62, 96, 0.01) 0px 10px 20px, rgba(76, 102, 148, 0.13) 0px 1px 3px;
+}
+
+.send{
+    align-self: center;
+}
+
+.header-comentario{
+    background-color: #25aae1;
+    box-shadow: 0 4px 15px 0 #25aae1;
+    color: white;
+    border-radius: 15px;
+    width: 100%;
+}

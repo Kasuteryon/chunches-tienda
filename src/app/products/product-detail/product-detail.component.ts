@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ProductsService } from '../shared/services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,6 +18,7 @@ export class ProductDetailComponent implements OnInit {
   id;
   user = JSON.parse(localStorage.getItem('currentUser'));
   iduser = this.user.user_id;
+  @Input() userid:string = this.iduser;
 
   form: FormGroup = new FormGroup({
     comentario:new FormControl(''),

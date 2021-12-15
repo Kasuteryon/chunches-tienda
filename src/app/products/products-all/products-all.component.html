@@ -36,7 +36,8 @@
                 </mat-card-content>
         
                 <mat-card-actions>
-                    <button mat-raised-button class="all btn-hover color-9" [routerLink]="['/products', 'detail', product.idproducto]">Me interesa</button>
+                    <button *ngIf="iduser != product.iduser" mat-raised-button class="all btn-hover color-9" [routerLink]="['/products', 'detail', product.idproducto]">Me interesa <mat-icon style="color: white;">shopping_basket</mat-icon></button>
+                    <button *ngIf="iduser == product.iduser" mat-raised-button class="all btn-hover color-4" [routerLink]="['/products', 'detail', product.idproducto]">Ver Mensajes <mat-icon style="color: white;">remove_red_eye</mat-icon></button>
                 </mat-card-actions>
             </div>
         </mat-card>

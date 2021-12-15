@@ -32,7 +32,7 @@
                     <td class="text-center" *ngIf="product.iduser == iduser && product.idcategoria == 4 && product.identrega == 1">Vehículos</td>
                             
                     <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1">
-                        <button class="btn-hover tab color-9" mat-raised-button [routerLink]="['/products','detail',product.idproducto]"><mat-icon>remove_red_eye</mat-icon></button>
+                        <button class="btn-hover tab color-3" mat-raised-button [routerLink]="['/products','detail',product.idproducto]"><mat-icon>remove_red_eye</mat-icon></button>
                     </td>
                     <td class="text-center" *ngIf="product.iduser == iduser && product.identrega == 1">
                       <button class="btn-hover tab color-5" mat-raised-button [routerLink]="['/products','edit',product.idproducto]"><mat-icon>edit</mat-icon></button>

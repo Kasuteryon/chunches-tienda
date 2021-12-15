@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ProductsService } from '../shared/services/products.service';
 
@@ -12,6 +12,9 @@ export class ProductsAllComponent implements OnInit {
 
   searchText = '';
   products:Product[];
+  user = JSON.parse(localStorage.getItem('currentUser'));
+  @Input() iduser = this.user.user_id;
+
   constructor(private service:ProductsService) { }
 
   ngOnInit(): void {
