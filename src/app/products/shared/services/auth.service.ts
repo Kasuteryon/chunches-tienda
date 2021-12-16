@@ -17,7 +17,7 @@ const httpOptions = {
 })
 
 export class AuthService {
-    AUTH:string = 'http://192.168.1.12:8000/api/auth/'
+    AUTH:string = 'https://192.168.1.12:8000/api/auth/'
 
     constructor(private http: HttpClient,
                 private router: Router){}

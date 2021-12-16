@@ -13,11 +13,11 @@ import { Coments } from '../models/coments';
 const PRODUCTS_URL = 'http://localhost:3000/products';
 const USERS_URL = 'http://localhost:3000/users';
 
-const USER = 'http://192.168.1.12:8000/api/users/'
-const PRODUCT = 'http://192.168.1.12:8000/api/products/'
-const CAT = 'http://192.168.1.12:8000/api/categories/'
-const ESTADOS = 'http://192.168.1.12:8000/api/estado/'
-const COMENT = 'http://192.168.1.12:8000/api/comments/'
+const USER = 'https://192.168.1.12:8000/api/users/'
+const PRODUCT = 'https://192.168.1.12:8000/api/products/'
+const CAT = 'https://192.168.1.12:8000/api/categories/'
+const ESTADOS = 'https://192.168.1.12:8000/api/estado/'
+const COMENT = 'https://192.168.1.12:8000/api/comments/'
 
 @Injectable({
   providedIn: 'root'
