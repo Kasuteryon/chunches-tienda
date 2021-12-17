@@ -10,11 +10,14 @@ export class ProductsComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
-    this.validateSession();
+
+    window.addEventListener('DOMContentLoaded', () => {
+      this.validateSession();
+    });
   }
 
   validateSession(){
-    if (localStorage.getItem('currentUser') === null){
+    if (localStorage.getItem('currentUser') == null){
       this.router.navigate(['login']);
     }
   }

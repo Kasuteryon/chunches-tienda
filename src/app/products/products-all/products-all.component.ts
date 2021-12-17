@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ProductsService } from '../shared/services/products.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ed-products-all',
@@ -15,9 +15,11 @@ export class ProductsAllComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('currentUser'));
   @Input() iduser = this.user.user_id;
 
-  constructor(private service:ProductsService) { }
+  constructor(private service:ProductsService,
+              private router:Router) { }
 
   ngOnInit(): void {
+    this.validateSession();
     this.loadProduct();
   }
 
@@ -39,6 +41,11 @@ export class ProductsAllComponent implements OnInit {
     
   }
 
+  validateSession(){
+    if (localStorage.getItem('currentUser') == null){
+      this.router.navigate(['login']);
+    }
+  }
   //n = setTimeout(function () { /* snip */  }, 1500);
 
 }

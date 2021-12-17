@@ -5,14 +5,14 @@
     </mat-card>
 </div>
 <div class="card-container">
-    <div *ngFor="let product of products.reverse()| appFilter:searchText">
+    <div *ngFor="let product of products| appFilter:searchText">
         <mat-card *ngIf="product.identrega == 1" style="text-align: center;" class="card-content animate__animated  animate__flipInX">
             <mat-card-header>
                 <mat-card-title>{{product.titulo}}</mat-card-title>
                 <mat-card-subtitle style="color: white;">{{product.marca}}</mat-card-subtitle>
                 
             </mat-card-header>
-            <img mat-card-img *ngIf="product.imagen" src="http://192.168.1.12:8000{{product.imagen}}">
+            <img mat-card-img *ngIf="product.imagen" src="{{product.imagen}}">
             <div class="body">
                 <mat-card-content>
                     <p><b>Descripción:</b></p>

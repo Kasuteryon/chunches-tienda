@@ -8,7 +8,7 @@
                     <mat-card-subtitle style="color: white;">{{products.marca}}</mat-card-subtitle>
                     
                 </mat-card-header>
-                <img mat-card-img *ngIf="products.imagen" src="http://192.168.1.12:8000{{products.imagen}}">
+                <img mat-card-img *ngIf="products.imagen" src="{{products.imagen}}">
                 <div class="body">
                     <mat-card-content>
                         <p><b>Descripción:</b></p>

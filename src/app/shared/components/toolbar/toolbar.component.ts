@@ -13,20 +13,24 @@ import { stringify } from 'querystring';
 export class ToolbarComponent implements OnInit {
 
   @Input() user:String;
-  us = JSON.parse(localStorage.getItem('currentUser'));
-  @Input() id = this.us.user_id;
+  @Input() id;
 
-  constructor(private authService:AuthService){}
+  constructor(private authService:AuthService,
+              private router:Router){}
+
   ngOnInit(): void {
-    let userJ = JSON.parse(localStorage.getItem('currentUser'));
-    this.user = userJ.username;
-    console.log(this.id)
+    if (localStorage.getItem('currentUser') === null){
+      this.router.navigate(['login']);
+      console.log("Entro aqui krnkl")
+    }else{
+      let userJ = JSON.parse(localStorage.getItem('currentUser'));
+      this.user = userJ.username;
+      this.id = userJ.user_id;
+    }
   }
 
   logout(){
     this.authService.logout();
   }
-
-  
 
 }

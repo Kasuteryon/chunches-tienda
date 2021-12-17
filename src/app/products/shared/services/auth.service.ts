@@ -17,7 +17,7 @@ const httpOptions = {
 })
 
 export class AuthService {
-    AUTH:string = 'https://192.168.1.12:8000/api/auth/'
+    AUTH:string = 'https://chunche-api.herokuapp.com/api/auth/'
 
     constructor(private http: HttpClient,
                 private router: Router){}
