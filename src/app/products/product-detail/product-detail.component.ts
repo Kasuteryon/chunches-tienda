@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ProductsService } from '../shared/services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -46,6 +46,8 @@ export class ProductDetailComponent implements OnInit {
       });
   }
 
+  @ViewChild('comentario') com;
+
   submit(){
     if (this.form.valid){
       const date: Date = new Date();
@@ -66,6 +68,8 @@ export class ProductDetailComponent implements OnInit {
         })
 
       });
+
+      this.form.reset();
     }
   }
 

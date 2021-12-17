@@ -41,12 +41,11 @@ public id;
   }
 
   private validateLogin(user: User){
-
     this.authService.login(user.username, user.password).pipe(first()).subscribe(
       data => {
         this.router.navigate(['']);
       }
     )
-    this.validFlag = false;
+    
   }
 }

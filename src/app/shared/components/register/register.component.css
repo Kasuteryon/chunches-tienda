@@ -11,7 +11,7 @@
 
 mat-card-title,
 mat-card-content{
-    display: flex;
+    display: block;
     justify-content: center;
 }
 
@@ -24,4 +24,5 @@ mat-card-content{
     background-color: green;
     color: #fff;
 }
+
 

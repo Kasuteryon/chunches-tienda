@@ -20,8 +20,9 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit(): void {
     if (localStorage.getItem('currentUser') === null){
-      this.router.navigate(['login']);
-      console.log("Entro aqui krnkl")
+      //this.router.navigate(['login']);
+      console.log("Entro aqui krnkl");
+      window.location.replace("/login");
     }else{
       let userJ = JSON.parse(localStorage.getItem('currentUser'));
       this.user = userJ.username;
