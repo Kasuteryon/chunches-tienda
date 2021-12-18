@@ -9,13 +9,13 @@
     <!-- <button mat-button [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
     </button> -->
-  
-    <button mat-button>
-        {{user}}
-        <mat-icon>account_circle</mat-icon>
-    </button>
     
     <div class="big">
+        <button mat-button>
+            Soy {{user}}
+            <mat-icon>account_circle</mat-icon>
+        </button>
+
         <button mat-button [routerLink]="['/products', 'list', id]">
             Mis Artículos
             <mat-icon>collections_bookmark</mat-icon>
@@ -37,6 +37,11 @@
             <mat-icon>menu</mat-icon>
         </a>
         <mat-menu #menu="matMenu">
+            <button mat-button>
+                Soy {{user}}
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            
             <button mat-button [routerLink]="['/products', 'list', id]">
                 Mis Artículos
                 <mat-icon>dashboard</mat-icon>

@@ -43,8 +43,10 @@ export class ProductAddComponent implements OnInit {
     this.loadCategories();
   }
 
+  isDisabled = false;
   submit(){
     if (this.form.valid){
+      this.isDisabled = true;
       const PRODUCT = this.form.value;
       console.log(this.form.value)
       this.service.add(PRODUCT)

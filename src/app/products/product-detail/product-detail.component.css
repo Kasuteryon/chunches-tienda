@@ -131,4 +131,17 @@ mat-card-content{
     .but{
         width: 100%;
     }
+
+    .card-container {
+        margin: 10px !important;
+        
+    }
+}
+
+@media (max-width: 1070px) {
+
+    .card-container {
+        margin: 10px !important;
+        
+    }
 }

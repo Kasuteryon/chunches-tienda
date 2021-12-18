@@ -5,6 +5,7 @@ import { ProductsService } from 'src/app/products/shared/services/products.servi
 import { User } from '../../models/user';
 import { AuthService } from 'src/app/products/shared/services/auth.service';
 import { first } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'ed-login',
@@ -26,7 +27,8 @@ public id;
 
   constructor(private router: Router,
               private service:ProductsService,
-              private authService:AuthService){
+              private authService:AuthService,
+              private snackBar:MatSnackBar){
 
   }
   ngOnInit(): void {
@@ -44,6 +46,10 @@ public id;
     this.authService.login(user.username, user.password).pipe(first()).subscribe(
       data => {
         this.router.navigate(['']);
+        this.snackBar.open('¡Bienvenido a Chunches!', 'Cerrar',{
+          duration: 3000 //milisegundos
+        })
+
       }
     )
     
